@@ -7,4 +7,7 @@ function searchCity(){
         city = document.getElementById('city').value;
         openWeatherURL = openWeatherURL + city + key;
         console.log(openWeatherURL);
+        openWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+
 };
+
