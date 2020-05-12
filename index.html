@@ -4,18 +4,15 @@
         <title>WeatherApp</title>
         <link rel="stylesheet" type="text/css" href="weather.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="app.js"></script>
+        
     </head>
     <body>
         <h1>Weather App</h1>
         <div>
-            <form method="GET">
-                <input type="text" id="city" placeholder="Search by City..." name="search">
-                <button type="submit" id="submit">Submit</button>
-            </form>
-            <div id="showResults">
-
-            </div>
+            <input type="text" id="city" placeholder="Search by City..." name="search">
+            <button type="submit" id="submit" onClick="searchCity()">Submit</button>
+            <div id="showResults"></div>
         </div>
+        <script src="app.js"></script>
     </body>
 </html>
