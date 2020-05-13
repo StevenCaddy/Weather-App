@@ -11,6 +11,11 @@
         <div>
             <input type="text" id="city" placeholder="Search by City..." name="search">
             <button type="submit" id="submit" onClick="searchCity()">Submit</button>
+           
+            <div class="slidecontainer">
+                <input type="range" min="1" max="2" value="2" class="slider" id="myRange">
+                <p>Units: <span id="demo"></span></p>
+            </div>
             <div id="showResults"></div>
         </div>
         <script src="app.js"></script>
