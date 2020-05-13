@@ -16,16 +16,18 @@ slider.oninput = function() {
         } else if (this.value == 2){
                 output.innerHTML = "Metric";
         }
+        slider = this.value;
+        return this.value;
 };
+
 // function runs after pushing submit btn and adds the city to
 function searchCity(){
         city = document.getElementById('city').value;
-        slider = document.getElementById('myRange').value;
-        console.log(slider.value);
-        if (slider.value = 1) {
+        console.log(slider);
+        if (slider == 1) {
                 openWeatherURL = openWeatherURL + city + unitImp + key;
                 console.log(openWeatherURL);
-        } else if (slider.value = 2) {
+        } else {
                 openWeatherURL = openWeatherURL + city + unitMet + key;
                 console.log(openWeatherURL);
         }
