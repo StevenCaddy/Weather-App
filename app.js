@@ -9,6 +9,7 @@ let slider = document.getElementById("myRange");
 let output = document.getElementById('demo');
 
 output.innerHTML = "Imperial";
+slider.value == 1;
 
 //display the units of slider?
 slider.oninput = function() {
@@ -35,7 +36,8 @@ function searchCity(){
                         .then(data => document.getElementById('showResults')
                                 .innerHTML = "Temperature in " + city + " is currently " + data.main.temp 
                                 + " degrees Fahrenheit.");
-                
+              
+        //outputs metric on load becuase slider value is not defined yet
         } else {
                 openWeatherURL = openWeatherURL + city + unitMet + key;
                 console.log(openWeatherURL);
