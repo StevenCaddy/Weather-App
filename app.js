@@ -9,8 +9,6 @@ let slider = document.getElementById("myRange");
 let output = document.getElementById('demo');
 
 output.innerHTML = "Imperial";
-//openWeatherURL = openWeatherURL + city + unitImp + key;
-//console.log(openWeatherURL);
 
 //display the units of slider?
 slider.oninput = function() {
@@ -31,18 +29,22 @@ function searchCity(){
         if (slider == 1) {
                 openWeatherURL = openWeatherURL + city + unitImp + key;
                 console.log(openWeatherURL);
+                // take response of api url and print to page
                 fetch(openWeatherURL)
                         .then(response => response.json())
                         .then(data => document.getElementById('showResults')
-                                .innerHTML = "This is the temperature " + data.main.temp);
+                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp 
+                                + " degrees Fahrenheit.");
                 
         } else {
                 openWeatherURL = openWeatherURL + city + unitMet + key;
                 console.log(openWeatherURL);
+                // take response of api url and print to page
                 fetch(openWeatherURL)
                         .then(response => response.json())
                         .then(data => document.getElementById('showResults')
-                                .innerHTML = "This is the temperature " + data.main.temp);
+                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp
+                                + " degrees Celsius.");
         }
 
         openWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=";
