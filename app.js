@@ -27,26 +27,25 @@ slider.oninput = function() {
 function searchCity(){
         city = document.getElementById('city').value;
         console.log(slider);
-        if (slider == 1) {
-                openWeatherURL = openWeatherURL + city + unitImp + key;
-                console.log(openWeatherURL);
-                // take response of api url and print to page
-                fetch(openWeatherURL)
-                        .then(response => response.json())
-                        .then(data => document.getElementById('showResults')
-                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp 
-                                + " degrees Fahrenheit.");
-              
-        //outputs metric on load becuase slider value is not defined yet
-        } else {
+        if (slider == 2) {
                 openWeatherURL = openWeatherURL + city + unitMet + key;
                 console.log(openWeatherURL);
                 // take response of api url and print to page
                 fetch(openWeatherURL)
                         .then(response => response.json())
                         .then(data => document.getElementById('showResults')
-                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp
+                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp 
                                 + " degrees Celsius.");
+
+        } else {
+                openWeatherURL = openWeatherURL + city + unitImp + key;
+                console.log(openWeatherURL);
+                // take response of api url and print to page
+                fetch(openWeatherURL)
+                        .then(response => response.json())
+                        .then(data => document.getElementById('showResults')
+                                .innerHTML = "Temperature in " + city + " is currently " + data.main.temp
+                                + " degrees Fahrenheit.");
         }
 
         openWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=";
